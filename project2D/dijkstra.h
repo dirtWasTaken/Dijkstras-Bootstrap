@@ -39,6 +39,7 @@ public:
 		bool isStart = false;
 		float gScore = 0;
 		Node *parent = nullptr;
+		bool clicked = false;
 
 		std::vector< Edge > connections;
 
@@ -52,15 +53,14 @@ public:
 
 	std::vector<Node*>  graphStartup(int graphSize);
 
-	void myDraw(std::vector<Node*> graph);
+	void myDraw();
 
 	std::vector<Node*> graph;
+	std::vector<Node*> path;
 
 private:
 
 
 	std::list<Node*> openList;
 	std::list<Node*> closedList;
-	std::vector<Node*> path;
-
 };

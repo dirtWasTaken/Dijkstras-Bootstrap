@@ -3,13 +3,9 @@
 #include <time.h>
 #include <stdlib.h>
 
-
-
-
 dijkstra::dijkstra() {}
 
 dijkstra::~dijkstra() {}  
-
 
 std::vector<dijkstra::Node*> dijkstra::graphStartup(int graphSize)
 {
@@ -37,118 +33,92 @@ std::vector<dijkstra::Node*> dijkstra::graphStartup(int graphSize)
 	graph.push_back(new Node(17, 700, 400));
 	graph.push_back(new Node(18, 900, 400));
 	graph.push_back(new Node(19, 1100, 400));
-	
+
 	/**********************************************************
 	***********************************************************/
-	graph[0]->connections.push_back(Edge(graph[1], 1));
-	graph[0]->connections.push_back(Edge(graph[5], 5));
-	graph[0]->connections.push_back(Edge(graph[6], 3));
+	graph[0]->connections.push_back(Edge(graph[1], 10));
+	graph[0]->connections.push_back(Edge(graph[5], 10));
+	graph[0]->connections.push_back(Edge(graph[6], 1));
 
-	graph[1]->connections.push_back(Edge(graph[2], 9));
-	graph[1]->connections.push_back(Edge(graph[6], 7));
-	graph[1]->connections.push_back(Edge(graph[7], 2));
+	graph[1]->connections.push_back(Edge(graph[2], 1));
+	graph[1]->connections.push_back(Edge(graph[6], 1));
+	graph[1]->connections.push_back(Edge(graph[7], 1));
 
-	graph[2]->connections.push_back(Edge(graph[3], 13));
-	graph[2]->connections.push_back(Edge(graph[7], 12));
-	graph[2]->connections.push_back(Edge(graph[8], 19));
+	graph[2]->connections.push_back(Edge(graph[3], 1));
+	graph[2]->connections.push_back(Edge(graph[7], 1));
+	graph[2]->connections.push_back(Edge(graph[8], 1));
 
-	graph[3]->connections.push_back(Edge(graph[4], 22));
-	graph[3]->connections.push_back(Edge(graph[8], 32));
+	graph[3]->connections.push_back(Edge(graph[4], 1));
+	graph[3]->connections.push_back(Edge(graph[8], 1));
 	graph[3]->connections.push_back(Edge(graph[9], 1));
 
-	graph[4]->connections.push_back(Edge(graph[9], 19));
-	
-	/**********************************************************
-	***********************************************************/
-
-	graph[5]->connections.push_back(Edge(graph[6], 3));
-	graph[5]->connections.push_back(Edge(graph[10], 23));
-	graph[5]->connections.push_back(Edge(graph[11], 32));
-
-	graph[6]->connections.push_back(Edge(graph[7], 50));
-	graph[6]->connections.push_back(Edge(graph[11], 65));
-	graph[6]->connections.push_back(Edge(graph[12], 45));
-
-	graph[7]->connections.push_back(Edge(graph[8], 34));
-	graph[7]->connections.push_back(Edge(graph[12], 65));
-	graph[7]->connections.push_back(Edge(graph[13], 37));
-
-	graph[8]->connections.push_back(Edge(graph[9], 40));
-	graph[8]->connections.push_back(Edge(graph[13], 33));
-	graph[8]->connections.push_back(Edge(graph[14], 23));
-
-	graph[9]->connections.push_back(Edge(graph[14], 29));
-
-	/**********************************************************
-	***********************************************************/
-	graph[10]->connections.push_back(Edge(graph[11], 17));
-	graph[10]->connections.push_back(Edge(graph[15], 13));
-	graph[10]->connections.push_back(Edge(graph[16], 19));
-
-	graph[11]->connections.push_back(Edge(graph[12], 43));
-	graph[11]->connections.push_back(Edge(graph[16], 32));
-	graph[11]->connections.push_back(Edge(graph[17], 54));
-
-	graph[12]->connections.push_back(Edge(graph[13], 23));
-	graph[12]->connections.push_back(Edge(graph[17], 11));
-	graph[12]->connections.push_back(Edge(graph[18], 65));
-
-	graph[13]->connections.push_back(Edge(graph[14], 23));
-	graph[13]->connections.push_back(Edge(graph[18], 43));
-	graph[13]->connections.push_back(Edge(graph[19], 56));
-
-	graph[14]->connections.push_back(Edge(graph[19], 43));
+	graph[4]->connections.push_back(Edge(graph[9], 1));
 
 	/**********************************************************
 	***********************************************************/
 
-	graph[15]->connections.push_back(Edge(graph[16], 34));
+	graph[5]->connections.push_back(Edge(graph[6], 1));
+	graph[5]->connections.push_back(Edge(graph[10], 1));
+	graph[5]->connections.push_back(Edge(graph[11], 1));
 
-	graph[16]->connections.push_back(Edge(graph[17], 23));
-	
-	graph[17]->connections.push_back(Edge(graph[18], 65));
+	graph[6]->connections.push_back(Edge(graph[7], 1));
+	graph[6]->connections.push_back(Edge(graph[11], 1));
+	graph[6]->connections.push_back(Edge(graph[12], 1));
 
-	graph[18]->connections.push_back(Edge(graph[19], 34));
+	graph[7]->connections.push_back(Edge(graph[8], 1));
+	graph[7]->connections.push_back(Edge(graph[12], 1));
+	graph[7]->connections.push_back(Edge(graph[13], 1));
+
+	graph[8]->connections.push_back(Edge(graph[9], 1));
+	graph[8]->connections.push_back(Edge(graph[13], 1));
+	graph[8]->connections.push_back(Edge(graph[14], 1));
+
+	graph[9]->connections.push_back(Edge(graph[14], 1));
+
+	/**********************************************************
+	***********************************************************/
+	graph[10]->connections.push_back(Edge(graph[11], 1));
+	graph[10]->connections.push_back(Edge(graph[15], 1));
+	graph[10]->connections.push_back(Edge(graph[16], 1));
+
+	graph[11]->connections.push_back(Edge(graph[12], 1));
+	graph[11]->connections.push_back(Edge(graph[16], 1));
+	graph[11]->connections.push_back(Edge(graph[17], 1));
+
+	graph[12]->connections.push_back(Edge(graph[13], 1));
+	graph[12]->connections.push_back(Edge(graph[17], 1));
+	graph[12]->connections.push_back(Edge(graph[18], 1));
+
+	graph[13]->connections.push_back(Edge(graph[14], 1));
+	graph[13]->connections.push_back(Edge(graph[18], 1));
+	graph[13]->connections.push_back(Edge(graph[19], 1));
+
+	graph[14]->connections.push_back(Edge(graph[19], 1));
+
+	/**********************************************************
+	***********************************************************/
+
+	graph[15]->connections.push_back(Edge(graph[16], 1));
+
+	graph[16]->connections.push_back(Edge(graph[17], 1));
+
+	graph[17]->connections.push_back(Edge(graph[18], 1));
+
+	graph[18]->connections.push_back(Edge(graph[19], 1));
+
 
 	return dijkstra::graph;
-
-
 }
 
-void dijkstra::myDraw(std::vector<Node*> graph)
+/*****************************************************************************
+
+*****************************************************************************/
+void dijkstra::myDraw()
 {
-	myAPPLICATION.m_2dRenderer = new aie::Renderer2D();
 
-	//begin drawing
-	myAPPLICATION.m_2dRenderer->begin();
-
-	// set the camera position before we begin rendering
-	myAPPLICATION.m_2dRenderer->setCameraPos(0, 0);
-
-	for (int i = 0; i < graph.size(); i++)
-	{
-		myAPPLICATION.m_2dRenderer->setRenderColour(1, 0, 1, 1);
-		myAPPLICATION.m_2dRenderer->drawCircle(graph[i]->x, graph[i]->y, 20, 0);
-
-		for (int c = 0; c < graph[i]->connections.size(); c++)
-		{
-			myAPPLICATION.m_2dRenderer->drawLine(graph[i]->x, graph[i]->y, graph[i]->connections[c].target->x, graph[i]->connections[c].target->y);
-		}
-	}
-
-	for (int p = 0; p < path.size(); p++)
-	{
-		myAPPLICATION.m_2dRenderer->setRenderColour(0, 1, 0, 1);
-		myAPPLICATION.m_2dRenderer->drawCircle(path[p]->x, path[p]->y, 20, 0);
-
-		if (p + 1 < path.size())
-		{
-			myAPPLICATION.m_2dRenderer->drawLine(path[p]->x, path[p]->y, path[p + 1]->x, path[p + 1]->y);
-		}
-
-	}
-		myAPPLICATION.m_2dRenderer->end();
 }
+
+
 
 bool compareNodes(const dijkstra::Node* first, const dijkstra::Node* second)
 {
@@ -157,7 +127,7 @@ bool compareNodes(const dijkstra::Node* first, const dijkstra::Node* second)
 
 std::vector <dijkstra::Node*> dijkstra::findPath(Node* start, Node* end)
 {
-	
+	myAPPLICATION.clearScreen();
 
 	//declaratin of lists used throughout the pathfinding algorithm
 	dijkstra::openList;
@@ -218,6 +188,7 @@ std::vector <dijkstra::Node*> dijkstra::findPath(Node* start, Node* end)
 	}
 	//the pushes the last node which will always be the start node 
 	path.push_back(currNode);
+
 	//returns the path
 	return path;
 }
